@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Out-2022 às 17:48
+-- Tempo de geração: 16-Out-2022 às 04:38
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.0.19
 
@@ -34,18 +34,16 @@ CREATE TABLE `donations` (
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `category` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+  `category` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `donations`
 --
 
-INSERT INTO `donations` (`id`, `title`, `cep`, `phone`, `email`, `description`, `category`) VALUES
-(1, 'Rosas Vermelhas', 13611209, '1998955027', 'diego.eduardo.w@gmail.com', 'olá eu sou', 'Romance'),
-(2, 'Rosas azuis', 13611209, '19890550027', 'diego.eduardo.w@gmail.com', 'Lalalal', 'Romance'),
-(3, 'wwr', 23232, '4242', 'diego.eduardo.w@gmail.com', 'wew', 'rwr'),
-(4, 'qeqeq', 3232, '2323', 'diego.eduardo.w@gmail.com', 'wqqweqweq', 'qeqeq');
+INSERT INTO `donations` (`id`, `title`, `cep`, `phone`, `email`, `description`, `category`, `image`) VALUES
+(1, 'Guerra dos mundos', 13611209, '19989550027', 'led@gmail.com', 'É legal!', 'Ficção', '890eaf12934afd41839fcfce9bed665a.jpg');
 
 -- --------------------------------------------------------
 
@@ -85,7 +83,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2022_10_13_125805_create_donations_table', 1),
-(6, '2022_10_13_131008_add_category_to_donations_table', 1);
+(6, '2022_10_13_131008_add_category_to_donations_table', 1),
+(7, '2022_10_14_191936_add_image_to_donations_table', 1);
 
 -- --------------------------------------------------------
 
@@ -187,7 +186,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `donations`
 --
 ALTER TABLE `donations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `failed_jobs`
@@ -199,7 +198,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT de tabela `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `personal_access_tokens`
