@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Tempo de geração: 17-Out-2022 às 15:51
-=======
--- Tempo de geração: 16-Out-2022 às 04:38
->>>>>>> 7e81f5aa43dc7e42bb0b0fc381bf938c6bf6a8d2
+-- Tempo de geração: 17-Out-2022 às 21:57
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.0.19
 
@@ -40,21 +36,17 @@ CREATE TABLE `donations` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `category` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `items` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`items`)),
+  `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `donations`
 --
 
-<<<<<<< HEAD
-INSERT INTO `donations` (`id`, `title`, `city`, `cep`, `phone`, `email`, `description`, `category`, `image`) VALUES
-(1, 'Rosas', 'Leme', 21412, '214151', 'diego.eduardo.w@gmail.com', 'diego', 'Romance', '0b57b606550e8ea236eaddec6c6e5d6b.png'),
-(2, 'wqweqw', 'wqqeq', 214124, '141241', 'marketing@grupoelg.com.br', 'eqweq', 'ewqeq', 'efda071c710c6472be4cc7dcbfd68610.jpg');
-=======
-INSERT INTO `donations` (`id`, `title`, `cep`, `phone`, `email`, `description`, `category`, `image`) VALUES
-(1, 'Guerra dos mundos', 13611209, '19989550027', 'led@gmail.com', 'É legal!', 'Ficção', '890eaf12934afd41839fcfce9bed665a.jpg');
->>>>>>> 7e81f5aa43dc7e42bb0b0fc381bf938c6bf6a8d2
+INSERT INTO `donations` (`id`, `title`, `city`, `cep`, `phone`, `email`, `description`, `category`, `image`, `items`, `date`) VALUES
+(1, 'Selva', 'Leme', 1234567, '31312425', 'marketing@grupoelg.com.br', 'Foda', 'Romance', '3412fc68faad1f6df7627ef258378b71.jpg', '[\"Est\\u00e1 faltando paginas\"]', '2022-10-18 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -95,7 +87,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2022_10_13_125805_create_donations_table', 1),
 (6, '2022_10_13_131008_add_category_to_donations_table', 1),
-(7, '2022_10_14_191936_add_image_to_donations_table', 1);
+(7, '2022_10_14_191936_add_image_to_donations_table', 1),
+(8, '2022_10_17_184922_add_items_to_donations_table', 1),
+(9, '2022_10_17_193751_add_date_to_donations', 1);
 
 -- --------------------------------------------------------
 
@@ -197,11 +191,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `donations`
 --
 ALTER TABLE `donations`
-<<<<<<< HEAD
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-=======
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
->>>>>>> 7e81f5aa43dc7e42bb0b0fc381bf938c6bf6a8d2
 
 --
 -- AUTO_INCREMENT de tabela `failed_jobs`
@@ -213,7 +203,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT de tabela `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `personal_access_tokens`
