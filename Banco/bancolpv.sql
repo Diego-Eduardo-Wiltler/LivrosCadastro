@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Tempo de geração: 17-Out-2022 às 15:51
+=======
+-- Tempo de geração: 16-Out-2022 às 04:38
+>>>>>>> 7e81f5aa43dc7e42bb0b0fc381bf938c6bf6a8d2
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.0.19
 
@@ -43,9 +47,14 @@ CREATE TABLE `donations` (
 -- Extraindo dados da tabela `donations`
 --
 
+<<<<<<< HEAD
 INSERT INTO `donations` (`id`, `title`, `city`, `cep`, `phone`, `email`, `description`, `category`, `image`) VALUES
 (1, 'Rosas', 'Leme', 21412, '214151', 'diego.eduardo.w@gmail.com', 'diego', 'Romance', '0b57b606550e8ea236eaddec6c6e5d6b.png'),
 (2, 'wqweqw', 'wqqeq', 214124, '141241', 'marketing@grupoelg.com.br', 'eqweq', 'ewqeq', 'efda071c710c6472be4cc7dcbfd68610.jpg');
+=======
+INSERT INTO `donations` (`id`, `title`, `cep`, `phone`, `email`, `description`, `category`, `image`) VALUES
+(1, 'Guerra dos mundos', 13611209, '19989550027', 'led@gmail.com', 'É legal!', 'Ficção', '890eaf12934afd41839fcfce9bed665a.jpg');
+>>>>>>> 7e81f5aa43dc7e42bb0b0fc381bf938c6bf6a8d2
 
 -- --------------------------------------------------------
 
@@ -188,7 +197,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `donations`
 --
 ALTER TABLE `donations`
+<<<<<<< HEAD
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+=======
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+>>>>>>> 7e81f5aa43dc7e42bb0b0fc381bf938c6bf6a8d2
 
 --
 -- AUTO_INCREMENT de tabela `failed_jobs`
