@@ -20,6 +20,10 @@
                 <input type="text" class="form-control" id="category" name="category" placeholder="Digite o gênero do livro ">
             </div>
             <div class="form-group">
+                <label for="title">Cidade</label>
+                <input type="text" class="form-control" id="city" name="city" placeholder="Informe sua cidade">
+            </div>
+            <div class="form-group">
                 <label for="title">Cep</label>
                 <input type="number" class="form-control" id="cep" name="cep" placeholder="Digite o CEP do local">
             </div>

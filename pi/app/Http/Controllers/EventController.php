@@ -30,6 +30,7 @@ class EventController extends Controller
 
         $donation->title = $request->title;
         $donation->category = $request->category;
+        $donation->city = $request->city;
         $donation->cep = $request->cep;
         $donation->phone = $request->phone;
         $donation->email = $request->email;
@@ -54,4 +55,8 @@ class EventController extends Controller
         return redirect('/')->with('msg', 'Livro cadastrado com sucesso!');
     }
 
+    public function show($id){
+        $donation = Donation::findOrFail($id);
+        return view('events.show', ['event' =>$donation]);
+    }
 }

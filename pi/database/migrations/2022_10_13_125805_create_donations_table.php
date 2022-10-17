@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('city');
             $table->integer('cep');
             $table->string('phone');
             $table->string('email');
