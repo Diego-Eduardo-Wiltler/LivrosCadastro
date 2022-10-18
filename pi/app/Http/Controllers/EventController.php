@@ -10,8 +10,20 @@ class EventController extends Controller
 {
     public function index(){
         
-        $donations = Donation::all();
-        return view('welcome', ['donations' =>$donations]);
+        $search = request('search');
+        if($search){
+            $donations = Donation::where([
+                ['title' , 'like', '%'.$search.'%']
+            ])->get();
+
+        }elseif($search){
+            $donations = Donation::where([
+                ['category','like', '%'.$search.'%']
+            ])->get();
+        }else{
+            $donations = Donation::all();
+        }
+        return view('welcome', ['donations' =>$donations, 'search' => $search]);
    
     }
 

@@ -24,3 +24,12 @@ Route::get('/events/{id}', [EventController::class, 'show']);
 Route::get('contact', [EventController::class, 'contact']);
 
 Route::post('/events', [EventController::class, 'store']);
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
