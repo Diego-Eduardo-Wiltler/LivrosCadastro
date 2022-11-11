@@ -31,44 +31,43 @@
                         <a href="/events/donation" class="nav-link">Cadastre Livros</a>
                     </li>
                     @auth
-                    <li class="nav-item">
-                        <a href="/dashboard" class="nav-link">Meus Livros</a>
-                    </li>
-                    <li class="nav-item">
-                        <form action="/logout" method="POST">
-                            @csrf
-                            <a href="/logout"
-                            class="nav-link" 
-                            onclick="event.preventDefault();
+                        <li class="nav-item">
+                            <a href="/dashboard" class="nav-link">Minha Conta</a>
+                        </li>
+                        <li class="nav-item">
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <a href="/logout" class="nav-link"
+                                    onclick="event.preventDefault();
                                     this.closest('form').submit();">
-                            Sair
-                        </a>
-                        </form>
-                    </li>
+                                    Sair
+                                </a>
+                            </form>
+                        </li>
                     @endauth
                     @guest
-                    <li class="nav-item">
-                        <a href="/login" class="nav-link">Entrar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/register" class="nav-link">Cadastrar</a>
-                    </li>
-                
+                        <li class="nav-item">
+                            <a href="/login" class="nav-link">Entrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/register" class="nav-link">Cadastrar</a>
+                        </li>
+
                     @endguest
                 </ul>
             </div>
         </nav>
     </header>
-        <main>
-            <div class="container-fluid">
-                <div class="row">
-                    @if (session('msg'))
-                        <p class="msg">{{ session('msg') }}</p>
-                    @endif
-                    @yield('content')
-                </div>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                @if (session('msg'))
+                    <p class="msg">{{ session('msg') }}</p>
+                @endif
+                @yield('content')
             </div>
-        </main>
+        </div>
+    </main>
     <footer>
         <p>LPV Doações &copy; 2022</p>
     </footer>
